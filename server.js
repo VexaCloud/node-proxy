@@ -4,10 +4,8 @@ const HttpProxyAgent = require("http-proxy-agent");
 
 const app = express();
 
-// Upstream proxy (the one you requested)
-const UPSTREAM = "http://129.146.22.123:80"; // Change port if needed
+const UPSTREAM = "http://129.146.22.123:80"; 
 
-// Create agent that forces all outbound traffic through upstream proxy
 const agent = new HttpProxyAgent(UPSTREAM);
 
 const proxy = httpProxy.createProxyServer({
@@ -17,7 +15,6 @@ const proxy = httpProxy.createProxyServer({
   xfwd: true
 });
 
-// Main catch‑all route
 app.use("/", (req, res) => {
   const target = req.query.url;
   if (!target) {
@@ -30,7 +27,6 @@ app.use("/", (req, res) => {
   });
 });
 
-// Start server
 app.listen(3000, () => {
   console.log("Proxy running on http://localhost:3000");
 });
