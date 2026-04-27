@@ -1,10 +1,10 @@
 const express = require("express");
 const httpProxy = require("http-proxy");
-const HttpProxyAgent = require("http-proxy-agent");
+const { HttpProxyAgent } = require("http-proxy-agent");
 
 const app = express();
 
-const UPSTREAM = "http://129.146.22.123:80"; 
+const UPSTREAM = "http://129.146.22.123:80";
 
 const agent = new HttpProxyAgent(UPSTREAM);
 
