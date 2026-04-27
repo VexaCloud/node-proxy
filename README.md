@@ -9,4 +9,4 @@
 ---
 
 **Usage**
-  * http://localhost:3000/?url=https://example.com
+  * https://production.url/?url=https://example.com
